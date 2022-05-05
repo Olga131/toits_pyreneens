@@ -1,9 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "montserrat";
+    font-family: "Montserrat";
 }
 
+/*header menu et footer*/
 .menu_nav {
     display: flex;
     align-items: center;
@@ -39,6 +40,16 @@
     width: 19vw;
     background-repeat: no-repeat;
     margin: 0;
+}
+
+/*footer*/
+footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: #EBD301;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*partie background,avec le text et un vector*/
@@ -82,7 +93,7 @@
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    height: 18vh;
+    height: 20vh;
     width: 100vw;
 }
 
@@ -90,6 +101,93 @@
     display: flex;
     align-items: center;
     background-color: #2F2F32;
-    height: 10vh;
+    height: 14vh;
     width: 100vw;
+}
+
+/*accuel menu dinamique*/
+.realisations {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.menu_dynamique {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.menu_dynamique li {
+    list-style: none;
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_realisations {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    height: 45vh;
+    display: none;
+}
+
+.text_realisations {
+    width: 40vw;
+}
+
+.img_lien_accueil {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.img_accueil {
+    width: 22vw;
+    height: 18vh;
+}
+
+.text_accueil_fin {
+    width: 70vw;
+    height: 30vh;
+}
+
+/*partie general pour chaque page*/
+.ligne_yellow {
+    background-color: #FFF100;
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.espace {
+    height: 4vh;
+}
+
+/*contact partie*/
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/contact.png");
+    width: 100vw;
+    height: 100vh;
+}
+
+.form_contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/form.png");
+    width: 50vw;
+    height: 60vh;
+    color: #ffffff;
+
 }
