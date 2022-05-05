@@ -1,6 +1,95 @@
-@import "~bootstrap/scss/bootstrap";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat";
+}
 
-.header {
-    background-image: url(./public/img/fon.png);
+.menu_nav {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    height: 15vh;
+    width: 100vw;
+    color: #626262;
+}
 
+.menu_nav ul {
+    display: flex;
+}
+
+.menu_nav li {
+    display: flex;
+    width: 18vw;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.menu {
+    display: flex;
+    height: 12vh;
+    width: 100vw;
+    align-items: center;
+    background-color: #EBD301;
+}
+
+.logo_img {
+    display: flex;
+    background-image: url("../img/logo.png");
+    height: 15vh;
+    width: 19vw;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+/*partie background,avec le text et un vector*/
+.header_fon {
+    display: flex;
+    justify-content: space-around;
+    background-image: url("../img/fon.png");
+    height: 80vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+}
+
+.header_text_and_vector {
+    display: flex;
+    width: 70%;
+    color: #ffffff;
+}
+
+.home_vector {
+    background-image: url("../img/home.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 30%;
+    padding-top: 5vh;
+}
+
+.text_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.home_vector {
+    display: flex;
+}
+
+/*les icones*/
+.icones_accuel {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    height: 18vh;
+    width: 100vw;
+}
+
+.icones_fon {
+    display: flex;
+    align-items: center;
+    background-color: #2F2F32;
+    height: 10vh;
+    width: 100vw;
 }
