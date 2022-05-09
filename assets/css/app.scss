@@ -4,6 +4,20 @@
     font-family: "Montserrat";
 }
 
+/*partie general pour chaque page*/
+.ligne_yellow {
+    background-color: #FFF100;
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.espace {
+    height: 4vh;
+}
+
 /*header menu et footer*/
 .menu_nav {
     display: flex;
@@ -14,23 +28,26 @@
     color: #626262;
 }
 
-.menu_nav ul {
-    display: flex;
-}
-
-.menu_nav li {
-    display: flex;
-    width: 18vw;
-    justify-content: space-evenly;
-    list-style: none;
-}
-
 .menu {
     display: flex;
     height: 12vh;
     width: 100vw;
     align-items: center;
     background-color: #EBD301;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 80vw;
+}
+
+.menu li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .logo_img {
@@ -130,7 +147,7 @@ footer {
 }
 
 .div_realisations {
-    display: flex;
+
     flex-direction: row;
     width: 70vw;
     height: 45vh;
@@ -157,19 +174,7 @@ footer {
     height: 30vh;
 }
 
-/*partie general pour chaque page*/
-.ligne_yellow {
-    background-color: #FFF100;
-    width: 30vw;
-    height: 10vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
 
-.espace {
-    height: 4vh;
-}
 
 /*contact partie*/
 .contact {
