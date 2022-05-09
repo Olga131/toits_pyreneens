@@ -22,7 +22,7 @@
 .menu_nav {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-image: url("../img/fon.png");
     height: 15vh;
     width: 100vw;
     color: #626262;
@@ -38,22 +38,21 @@
 
 .menu ul {
     display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+    justify-content: space-around;
+    list-style: none;
     width: 80vw;
 }
 
 .menu li {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .logo_img {
     display: flex;
     background-image: url("../img/logo.png");
-    height: 15vh;
+    height: 22vh;
     width: 19vw;
     background-repeat: no-repeat;
     margin: 0;
@@ -195,4 +194,20 @@ footer {
     height: 60vh;
     color: #ffffff;
 
+}
+
+/*PAGE CONTACT*/
+.contact_sections {
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.contact_text_information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

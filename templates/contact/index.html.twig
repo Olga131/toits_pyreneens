@@ -3,18 +3,39 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="header_fon">
+</section>
+<section class="contact_sections">
+  
+   <div class="ligne_yellow">
+      <h3>OÙ ON SE TROUVE?</h3>
+   </div>
+   <div class="contact_text_information">
+      <h4>19 rue JEAN MOULIN <br>JURANÇON 64110</h4>
+   </div>
+</section>
+<section class="contact_sections">
+  
+   <div class="ligne_yellow">
+      <h3>HEURES D’OUVERTURE:</h3>
+   </div>
+   <div class="contact_text_information">
+      <h4>Lundi - vendredi     de 08.00 à 17.30 heures</h4>
+   </div>
+</section>
+<section class="contact_sections">
+  
+   <div class="ligne_yellow">
+      <h3>NUMÉRO DE TÉLÉPHONE:</h3>
+   </div>
+   <div class="contact_text_information">
+      <h4>06 88 41 71 47</h4>
+   </div>
+</section>
+<div class="espace"></div>
+<div class="ligne_yellow">
+      <h3>Pour nous envoyer un message veillez utiliser la forme:</h3>
+   </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/symfony/toitsPyreneens/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/symfony/toitsPyreneens/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
