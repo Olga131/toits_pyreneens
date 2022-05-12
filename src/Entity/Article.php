@@ -6,8 +6,11 @@ use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+##[Vich\Uploadable]
 class Article
 {
     #[ORM\Id]
@@ -23,6 +26,13 @@ class Article
 
     #[ORM\Column(type: 'date')]
     private $datePublication;
+
+
+    ##[Vich\UploadableField(mapping: 'uploads', fileNameProperty: 'imageName', size: 'imagesSize')]
+    #private ?File $imageFile = null;
+
+    # #[ORM\Column(type: 'string')]
+    #private ?string $imageName = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $image;
