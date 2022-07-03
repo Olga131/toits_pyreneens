@@ -6,6 +6,7 @@ use App\Repository\CategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
 class Categorie
@@ -17,6 +18,10 @@ class Categorie
 
     #[ORM\Column(type: 'string', length: 255)]
     private $nom;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('article')]
+    private $slug;
 
     #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'categorie')]
     private $articles;
@@ -39,6 +44,18 @@ class Categorie
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
@@ -68,5 +85,10 @@ class Categorie
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->nom;
     }
 }

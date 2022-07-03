@@ -1,20 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello NosRealisationsController!{% endblock %}
+{% block title %}Nos réalisations – Toits Pyrènèens{% endblock %}
+
+{% block extendNav %}
+    <section class="container" id="header_text_and_vector">
+        <div class="row">
+            <div class="col-sm-8 col-12">
+                <h1>TOITS PYRÉNÉENS</h1>
+                <div class="topLine">
+                    <h3>Rèalisations de nos chantiers
+                    </h3>
+                </div>
+            </div>
+            <div class="col-4 d-md-block d-sm-none d-none">
+                <div class="home_vector"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <!--les icones-->
+    {% include 'partials/icones.html.twig' %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div style="margin-top: 25px">&nbsp;</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/symfony/toitsPyreneens/src/Controller/NosRealisationsController.php'|file_link(0) }}">src/Controller/NosRealisationsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/symfony/toitsPyreneens/templates/nos_realisations/index.html.twig'|file_link(0) }}">templates/nos_realisations/index.html.twig</a></code></li>
-    </ul>
-</div>
+    {% for cat in categories %}
+        {% include 'nos_realisations/categorie.html.twig' with {articles: cat.articles, titre: cat.titre} %}
+    {% endfor %}
 {% endblock %}

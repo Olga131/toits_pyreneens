@@ -47,6 +47,11 @@ class CategorieRepository extends ServiceEntityRepository
         }
     }
 
+    public function categorieList()
+    {
+        return $this->createQueryBuilder('c')->getQuery()->getArrayResult();
+    }
+
     // /**
     //  * @return Categorie[] Returns an array of Categorie objects
     //  */
@@ -64,15 +69,12 @@ class CategorieRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Categorie
+    public function findById($id): ?Categorie
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('c.id = :val')
+            ->setParameter('val', $id)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getOneOrNullResult();
     }
-    */
 }
