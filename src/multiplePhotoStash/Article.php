@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+//namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -11,7 +11,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-##[Vich\Uploadable]
 class Article
 {
     #[ORM\Id]
@@ -35,16 +34,8 @@ class Article
     #[Groups('article')]
     private $datePublication;
 
-
-    ##[Vich\UploadableField(mapping: 'uploads', fileNameProperty: 'imageName', size: 'imagesSize')]
-    #private ?File $imageFile = null;
-
-    # #[ORM\Column(type: 'string')]
-    #private ?string $imageName = null;
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('article')]
-    private $image;
+    #[ORM\OneToMany(mappedBy: 'article', targetEntity: Attachment::class)]
+    private $attachments;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'articles')]
     #[Groups('article')]
@@ -62,6 +53,7 @@ class Article
     {
         $this->categorie = new ArrayCollection();
         $this->tag = new ArrayCollection();
+        $this->attachments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -72,6 +64,33 @@ class Article
     public function getTitre(): ?string
     {
         return $this->titre;
+    }
+
+    public function getAttachments() {
+        return $this->attachments;
+    }
+
+    public function addAttachment(Attachment $attachment): self
+    {
+//        if (!$this->attachments->contains($attachment)) {
+            $this->attachments[] = $attachment;
+            $attachment->setArticle($this);
+//        }
+
+        return $this;
+    }
+
+    public function removeAttachment(Attachment $attachment): self
+    {
+        if ($this->attachments->contains($attachment)) {
+            $this->attachments->removeElement($attachment);
+            // set the owning side to null (unless already changed)
+            if ($attachment->getArticle() === $this) {
+                $attachment->setArticle(null);
+            }
+        }
+
+        return $this;
     }
 
     public function setTitre(string $titre): self
@@ -113,18 +132,6 @@ class Article
     public function setDatePublication(\DateTimeInterface $datePublication): self
     {
         $this->datePublication = $datePublication;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
